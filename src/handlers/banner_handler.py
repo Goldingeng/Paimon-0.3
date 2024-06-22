@@ -3,7 +3,7 @@ from aiogram.types import Message, CallbackQuery
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.database.users import User
-from src.keyboards import banner_markup, menu_markup, history_markup
+from src.keyboards import banner_markup, menu_markup
 from ..utils.apscheduler import get_message_user_photo
 from aiogram.types import InputMediaPhoto
 

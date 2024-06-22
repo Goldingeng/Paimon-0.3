@@ -3,7 +3,8 @@ from .banner_handler import banner_router
 from .moder_menu import moder_router
 from .pumping_handler import pumping_router
 from .nick_handler import nick_router
-from .statuc_handler import status_router
+from .status_handler import status_router
+from .help_handler import help_router
 
 
 #message_router должен быть последним!

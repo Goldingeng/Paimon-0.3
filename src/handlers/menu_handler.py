@@ -1,5 +1,4 @@
-from aiogram import Router, F, Bot, types
-from aiogram.types import user_profile_photos
+from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.types import InputMediaPhoto
 
@@ -8,10 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from ..utils.apscheduler import get_message_user_photo
 
 from src.database.users import User
-from src.keyboards import menu_markup, banner_markup, characters_markup
-
-from .banner_handler import banner_handler
-
+from src.keyboards import menu_markup, banner_markup, characters_markup, pumping_markup
 
 from src.keyboards.callback import *
 
@@ -128,5 +124,23 @@ async def pumping_callback_handler(query: CallbackQuery, session: AsyncSession) 
         await query.answer("Это не твоя паймон, жулик!", True)
         return
 
+    user = await User.get(session=session, user_id= query.from_user.id)
+    lvlwallet = await user.lvlwallet_os(session, query.from_user.id)
+
+    if lvlwallet == "1":
+        price = 5000
+
+    if lvlwallet == "2":
+        price = 10000
+
+    if lvlwallet == "3":
+        price = "Max"
     
-    await query.message.edit_caption(caption="[eq cjcb]")
+    await query.message.edit_caption(caption=
+            f"<b>{user.nickname}</b>\n"
+            f"{user.status}\n\n"
+            f"📈 <b>Уровень мешка</b>: {lvlwallet} ({price})\n"
+            f"🆔 <code>{user.id}</code>\n\n"
+            f"💰 <b>Кэшбек</b>: {user.cashback}\n",
+            parse_mode="HTML", 
+            reply_markup=pumping_markup(query.from_user.id))

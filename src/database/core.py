@@ -4,7 +4,7 @@ from typing import Type
 
 from sqlalchemy.ext.asyncio import async_sessionmaker, AsyncAttrs
 from sqlalchemy.ext.asyncio import create_async_engine
-from sqlalchemy.orm import declarative_base, DeclarativeBase, Mapper
+from sqlalchemy.orm import DeclarativeBase
 
 from src.config import DATABASE_URL
 

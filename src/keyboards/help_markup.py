@@ -1,14 +1,12 @@
+from typing import List
+
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from .callback import *
 
-def message_markup(user_id: int):
-    callback_data_banner = BannerCallback(user_id=user_id)
+def help_markup():
+
     inline_keyboard = [
-        [
-            InlineKeyboardButton(text="Баннер", callback_data=callback_data_banner.pack()),
-            InlineKeyboardButton(text="Улучшение", callback_data="11")
-        ],
 
         [
             InlineKeyboardButton(text="Канал",  url="https://t.me/genshintwist")

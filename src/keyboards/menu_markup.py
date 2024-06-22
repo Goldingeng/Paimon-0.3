@@ -1,11 +1,4 @@
-import logging
-from typing import List, Sequence
-
-from aiogram.filters.callback_data import CallbackData
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
-from ..database.users import User
-
 from .callback import *
 
 def menu_markup(user_id: int):

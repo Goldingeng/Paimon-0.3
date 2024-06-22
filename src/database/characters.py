@@ -1,9 +1,7 @@
-from typing import TYPE_CHECKING, List
+from typing import List
 
 from sqlalchemy import Sequence, select, Column, Integer, String
 from sqlalchemy.ext.asyncio import AsyncSession
-
-import random
 
 from src.database.core import Base
 from sqlalchemy import and_, not_

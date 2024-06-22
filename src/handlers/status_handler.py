@@ -1,17 +1,16 @@
-from aiogram import Router, F, Bot, types
+from aiogram import Router, F
 from aiogram.types import Message
 from sqlalchemy.ext.asyncio import AsyncSession
 from src.database.users import User
 
 
 
-status_router = Router(name="status")
+status_router = Router(name="restatus")
 
-@status_router.message(F.text.startswith("/status"))
+@status_router.message(F.text.startswith("/restatus"))
 async def status_handler(message: Message, session: AsyncSession) -> None:
 
-    status = message.text[len("/status"):].strip()
-
+    status = message.text[len("/restatus"):].strip()
     valid_status = ''.join(e for e in status if e.isalnum() or e.isspace())[:90]
     
     if not valid_status:

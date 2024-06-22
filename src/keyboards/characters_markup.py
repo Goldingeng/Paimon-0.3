@@ -1,5 +1,4 @@
-import logging
-from typing import List, Sequence
+from typing import List
 
 from aiogram.filters.callback_data import CallbackData
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup

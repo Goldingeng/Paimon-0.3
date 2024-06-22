@@ -1,19 +1,22 @@
-
 from os import getenv
 from aiogram.types import InputMediaPhoto
 
-fallback_photo = "AgACAgIAAxUAAWXjjSW_fW6ZkQxqrhWpE809hCnKAALl1DEbM1EYS-Tewhdp6S5bAQADAgADYwADNAQ"
+avatar_photo = "AgACAgIAAx0CZynDbAACC_5mcUHxAU2jl7YWXBLkzy8h1-s3YwACiNsxG44EiUt5Ryr7jkOP7gEAAwIAA3kAAzUE"
+
 prim_photo = "AgACAgIAAx0CZynDbAACCB9l65D8_KlbZt8DaNFEXBAYGzABowACktUxG-UhYEtdW9o1wFgHigEAAwIAA3gAAzQE"
 
 
+bot_prew = "AgACAgIAAx0CZynDbAACDAABZnFfT617Ad69XNdzpxa_5NuyXPsAAhTYMRtDfIlL6DzydNKsFWoBAAMCAAN5AAM1BA"
+
 banner_photo = InputMediaPhoto(media="AgACAgIAAx0CZynDbAACCEhl7dxZe0qMxDMK6C8B3DaR36R2xQACSdoxG9PUaUvDZRIa7zQsGwEAAwIAA3gAAzQE")
 
-
-
 TOKEN = "7038000405:AAFfayc0Rvq1qLGquomo9nZ3vE_RYoCIyXI"
+
 DATABASE_URL = "postgresql+asyncpg://golding:gold2024@213.171.3.18:5432/genshinbot"
+
 POSTGRESQL = getenv("POSTGRESQL")
 REDIS_FSM = getenv("REDIS_FSM")
+
 
 RARITIES = [
     "Обычная",

@@ -68,7 +68,7 @@ try:
 
 
         if user.cashback < price:
-            await query.answer("У тебя недостаточно кэшбека!")
+            await query.answer("У тебя недостаточно кэшбека!", True)
 
         user.cashback -= price
         user.lvlWallet += 2

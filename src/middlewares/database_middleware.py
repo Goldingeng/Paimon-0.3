@@ -1,11 +1,8 @@
-import asyncio
 from abc import ABC
 from typing import Dict, Any, Callable, Awaitable
 from aiogram.dispatcher.middlewares.base import BaseMiddleware
 from aiogram.types import Message
-from aiogram.types.base import TelegramObject
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from sqlalchemy.ext.asyncio import async_sessionmaker, AsyncSession
+from sqlalchemy.ext.asyncio import AsyncSession
 
 
 class DatabaseMiddleware(BaseMiddleware, ABC):

@@ -1,9 +1,9 @@
 import time
-from typing import Optional, List, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from sqlalchemy import select, BigInteger, Column, String
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import relationship
+
 
 from src.database.core import Base
 

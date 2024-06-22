@@ -3,11 +3,7 @@ from typing import TYPE_CHECKING, List
 from sqlalchemy import select, Column, Integer, BigInteger
 from sqlalchemy.ext.asyncio import AsyncSession
 
-import random
-
 from src.database.core import Base
-
-from sqlalchemy import func
 
 from sqlalchemy import desc
 

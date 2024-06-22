@@ -1,7 +1,7 @@
 import time
 from typing import Union, List
 
-from sqlalchemy import select, BigInteger, Column, String
+from sqlalchemy import select, BigInteger, Column
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from sqlalchemy.dialects.postgresql import ARRAY
