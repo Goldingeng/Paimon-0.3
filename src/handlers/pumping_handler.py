@@ -70,6 +70,8 @@ try:
         if user.cashback < price:
             await query.answer("У тебя недостаточно кэшбека!", True)
 
+            return
+
         user.cashback -= price
         user.lvlWallet += 2
         await session.commit()
