@@ -27,6 +27,14 @@ async def user_record(session: AsyncSession, user_id, last_message_time, message
 
     del user_cache[user_id]
 
+async def issuing_rewards(session: AsyncSession, user_id, last_message_time, primgems):
+    user = await User.get(session, user_id)
+    user.dateMess = last_message_time
+    user.counterMessage = 0
+    user.primgems += primgems
+    await session.commit()
+
+    del user_cache[user_id]
 
 async def cleanup_inactive_cache():
     while True:
@@ -67,7 +75,7 @@ async def is_message_valid(message: Message, user_cache: dict, user_id: int) -> 
 
 
     last_message_time = user_cache.get("last_message_time")
-    if int(time.time()) - last_message_time < 0:
+    if int(time.time()) - last_message_time < 15:
         return False
 
     return True
@@ -107,7 +115,7 @@ async def message_handler(message: Message, session: AsyncSession) -> None:
                 user = await User.get(session, user_id) 
                 lvlWallet = user.lvlWallet  
                 primgems = message_count * lvlWallet
-                await user_record(session, user_id, last_message_time, message_count, primgems)
+                await issuing_rewards(session, user_id, last_message_time, primgems)
                 await message.answer_photo(prim_photo, await answer_gen(user.nickname, message_count, primgems), "HTML", reply_markup=message_markup(user_id))
             else:
                 await increasing_message_counter(user_id, last_message_time, message_count, message.text)

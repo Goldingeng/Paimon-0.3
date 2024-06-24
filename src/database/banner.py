@@ -70,4 +70,13 @@ class Banner(Base):
 
         return await session.scalar(banner)
 
-    
+    # Check if the relevant banner is still within 3 days
+    @classmethod
+    async def is_banner_relevant(cls, session: AsyncSession) -> bool:
+        banner = await cls.banner_locate(session)
+        if not banner:
+            return False
+        current_time = time.time()
+        if current_time - banner.date_banner <= 259200:
+            return True
+        return False
