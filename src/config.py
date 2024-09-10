@@ -10,9 +10,9 @@ bot_prew = "AgACAgIAAx0CZynDbAACDAABZnFfT617Ad69XNdzpxa_5NuyXPsAAhTYMRtDfIlL6Dzy
 
 banner_photo = InputMediaPhoto(media="AgACAgIAAx0CZynDbAACCEhl7dxZe0qMxDMK6C8B3DaR36R2xQACSdoxG9PUaUvDZRIa7zQsGwEAAwIAA3gAAzQE")
 
-TOKEN = "7038000405:AAFfayc0Rvq1qLGquomo9nZ3vE_RYoCIyXI"
+TOKEN = ""
 
-DATABASE_URL = "postgresql+asyncpg://golding:gold2024@213.171.3.18:5432/genshinbot"
+DATABASE_URL = ""
 
 POSTGRESQL = getenv("POSTGRESQL")
 REDIS_FSM = getenv("REDIS_FSM")
