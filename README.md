@@ -41,10 +41,10 @@ This is a **Telegram bot** that simulates spins (gacha pulls) from the popular g
 ## 📝 Usage
 
 - **/start** - Start interacting with the bot.
-- **/spin** - Simulate a spin and see which characters you get.
-- **/characters** - View your collection of characters.
+- **/menu** - Main menu of the bot.
 - **/banner** - View the current banner and its featured characters.
-- **/history** - Review your pull history.
+  
+The main control of the bot is carried out through interactive buttons on messages
 
 ## 🌟 How It Works
 
