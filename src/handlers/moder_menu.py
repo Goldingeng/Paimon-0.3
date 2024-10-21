@@ -12,9 +12,6 @@ moder_router = Router(name="add")
 async def menu_handler(message: Message, session: AsyncSession) -> None:
     if message.text:
         return
-    
-    if lambda message: "/add" in message.caption != True:
-        return
 
     lines = message.caption.split('\n')
     

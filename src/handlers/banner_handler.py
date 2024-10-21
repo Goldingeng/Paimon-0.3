@@ -102,7 +102,7 @@ async def history_callback_handler(
 
 async def leg_get(eventLeg: int, last_leg: int) -> int:
     
-    standart_leg = [61, 82, 83, 84, 85, 86, 55]
+    standart_leg = [117, 116, 115, 114, 113, 92, 86]
     if last_leg in standart_leg or randint(1, 2) == 1:
         return eventLeg
     else:

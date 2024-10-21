@@ -8,7 +8,7 @@ from sqlalchemy import and_, not_
 from sqlalchemy import func
 
 class Characters(Base):
-    __tablename__ = "Characters"
+    __tablename__ = "characters"
     __allow_unmapped__ = True
 
     id: int = Column(

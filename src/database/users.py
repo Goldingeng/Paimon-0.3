@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 
 class User(Base):
-    __tablename__ = "Users"
+    __tablename__ = "users"
     __allow_unmapped__ = True
 
     id: int = Column(

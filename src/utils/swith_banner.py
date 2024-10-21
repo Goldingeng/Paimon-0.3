@@ -15,7 +15,7 @@ async def change_banner_periodically():
                 leg = await Characters.select_leg(session)
                 epic = await Characters.select_epic(session)
                 epic = [v.id for v in epic]
-                ordinary = [61, 82, 83, 84, 85, 86, 55]
+                ordinary = [117, 116, 115, 114, 113, 92, 86]
 
                 if leg in ordinary:
                     leg = await Characters.select_leg(session)
